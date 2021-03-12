@@ -1,5 +1,7 @@
 # Bash Exercises
 
+#### https://github.com/DeepakPrabakar/unix-linux-interview-questions
+
 1. Delete blank lines in file
 2. Print number of times each word appears in a file
 3. List all the files in directory except .txt and .pdf
@@ -17,6 +19,13 @@
 15. Given a file with numbers. Sort each line.
 16. Bash shell script to reverse a string / word.
 17. Reverse last 4 digits of a string.
+
+#### https://www.guru99.com/shell-scripting-interview-questions.html
+
+18. Given a file, replace all occurrence of word "ABC" with "DEF" from 5th line till end in only those lines that contains word "MNO"
+19. Given a file, write a command sequence to find the count of each word.
+20. How will you find the 99th line of a file using only tail and head command?
+21. Print the 10th line without using tail and head command.
 
 -----------------
 
