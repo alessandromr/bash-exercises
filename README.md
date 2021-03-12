@@ -19,3 +19,107 @@
 17. Reverse last 4 digits of a string.
 
 -----------------
+
+## 1 Delete blank lines in file
+
+```bash
+    sed '/^$/d' 01/test-file.txt
+```
+
+This commands is using the basic sed syntax `[addr]X[options]` where addr is the regexp `^$` to catch an empty line and X is a single-letter command, in this case `d` (delete).
+
+## 2 Print number of times each word appears in a file
+
+```bash
+    tr ' ' '\n'  < 02/test-file.txt | tr '\t' '\n' | sed '/^$/d' | sed 's/[.,\(\)\"]//g' | sed "s/[\'\`\’]//g" | awk '{print tolower($0)}' | sort | uniq -c | sort -rn
+```
+
+## 3 List all the files in directory except .txt and .pdf
+
+```bash
+    ls -l 03 | awk '{print $9}' | sed '/^$/d' | sed '/.txt/d' | sed '/.pdf$/d'
+```
+
+## 4 Rename all .jpg files to .jpeg
+
+```bash
+    for i in $(ls -l 04 | awk '{print $9}' | sed '/^$/d' | grep .jpg); do mv ./04/$i ./04/$(sed 's/jpg/jpeg/g' <<< $i); done
+```
+
+## 5 Delete files of size more than 100mb in a folder which are older than 90 days
+
+```bash
+
+```
+
+## 6 Reverse the words in a sentence
+
+```bash
+
+```
+
+## 7 Given an input file having lines with alphabets and numbers. Print only the distinct alpha-numberic lines
+
+```bash
+
+```
+
+## 8 Given a comma separated input file with items, category and cost. Display the category and its sum
+
+```bash
+
+```
+
+## 9 Output of following command ps -ef | awk '{ print $1}' | sort | uniq | wc -l
+
+```bash
+
+```
+
+## 10 Kill process based on user and process
+
+```bash
+
+```
+
+## 11 Print contents of a file starting from the nth line
+
+```bash
+
+```
+
+## 12 Write a command to calculate the total size of all pdf files in the directory
+
+```bash
+
+```
+
+## 13 Write a command to delete the first and last line in every file in the directory and rename it
+
+```bash
+
+```
+
+## 14 Given a file with records. Print the sum of m where name=aman
+
+```bash
+
+```
+
+## 15 Given a file with numbers. Sort each line
+
+```bash
+
+```
+
+## 16 Bash shell script to reverse a string / word
+
+```bash
+
+```
+
+## 17 Reverse last 4 digits of a string
+
+```bash
+
+```
