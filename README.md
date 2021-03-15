@@ -58,13 +58,13 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
 ## 5 Delete files of size more than 100mb in a folder which are older than 90 days
 
 ```bash
-
+    find ./05/ -mtime -90 -type f -exec du {} \; | awk '{ if($1 > 100000){print $2}}' | xargs rm
 ```
 
 ## 6 Reverse the words in a sentence
 
 ```bash
-
+    
 ```
 
 ## 7 Given an input file having lines with alphabets and numbers. Print only the distinct alpha-numberic lines
