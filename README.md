@@ -64,7 +64,7 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
 ## 6 Reverse the words in a sentence
 
 ```bash
-    
+    echo "Ciao sono io" | tr ' ' '\n' | tail -r | tr '\n' ' '
 ```
 
 ## 7 Given an input file having lines with alphabets and numbers. Print only the distinct alpha-numberic lines
