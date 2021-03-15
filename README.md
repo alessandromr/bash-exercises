@@ -67,7 +67,7 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
     echo "Ciao sono io" | tr ' ' '\n' | tail -r | tr '\n' ' '
 ```
 
-## 7 Given an input file having lines with alphabets and numbers. Print only the distinct alpha-numberic lines
+## 7 Removed
 
 ```bash
 
@@ -76,7 +76,18 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
 ## 8 Given a comma separated input file with items, category and cost. Display the category and its sum
 
 ```bash
-
+    awk '
+    BEGIN{}
+    {
+        split($0,arr,",")
+        sumArr[arr[2]] = sumArr[arr[2]] + arr[3]
+        arrKey[arr[2]] = arr[2]
+    }
+    END {
+        for (i in sumArr){
+            print arrKey[i] " " sumArr[i]
+        }
+    }' ./08/test-input.txt
 ```
 
 ## 9 Output of following command ps -ef | awk '{ print $1}' | sort | uniq | wc -l
