@@ -90,13 +90,13 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
     }' ./08/test-input.txt
 ```
 
-## 9 Output of following command ps -ef | awk '{ print $1}' | sort | uniq | wc -l
+## 9 Remove
 
 ```bash
 
 ```
 
-## 10 Kill process based on user and process
+## 10 Remove
 
 ```bash
 
@@ -105,13 +105,25 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
 ## 11 Print contents of a file starting from the nth line
 
 ```bash
-
+    echo "Line number:"
+    read
+    awk -v x=$REPLY '
+    BEGIN{
+        i=0
+    }
+    {
+        i++
+        if (i>x){
+            print $0
+        }
+    }
+    END {}' ./11/test-input.txt
 ```
 
 ## 12 Write a command to calculate the total size of all pdf files in the directory
 
 ```bash
-
+    find ./12 -type f -name "*.pdf" -exec du {} \; | awk '{x+=$1}END{print x}'
 ```
 
 ## 13 Write a command to delete the first and last line in every file in the directory and rename it

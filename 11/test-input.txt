@@ -1,0 +1,6 @@
+item1,category1,200
+item2,category2,100
+item3,category3,300
+item4,category1,400
+item5,category2,500
+item6,category1,600
