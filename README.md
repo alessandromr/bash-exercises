@@ -90,12 +90,6 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
     }' ./08/test-input.txt
 ```
 
-## 9 Remove
-
-```bash
-
-```
-
 ## 10 Write a command to print the first and last line of each file
 
 ```bash
@@ -126,23 +120,21 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
     find ./12 -type f -name "*.pdf" -exec du {} \; | awk '{x+=$1}END{print x}'
 ```
 
-## 13 Write a command to delete the first and last line in every file in the directory and rename it
+## 13 Write a command to delete the first and last line in every file in the directory
+
+Sed on OS X use a mix of BSD and GNU commands, sed with `-i` wants a first arguments where backup name can be specified.
 
 ```bash
-
+    find ./13 -type f -name "*.txt" -exec sed -i '' -e '1d' -e '$d' {} \;
 ```
 
 ## 14 Given a file with records. Print the sum of m where name=aman
 
 ```bash
-
+    awk -f 14/script.awk 14/input.txt
 ```
 
 ## 15 Given a file with numbers. Sort each line
-
-```bash
-
-```
 
 ## 16 Bash shell script to reverse a string / word
 
