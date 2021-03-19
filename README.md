@@ -96,10 +96,10 @@ This commands is using the basic sed syntax `[addr]X[options]` where addr is the
 
 ```
 
-## 10 Remove
+## 10 Write a command to print the first and last line of each file
 
 ```bash
-
+    find 13 -type f -name "*.txt" -exec bash -c 'echo "first line: " && head -n 1 {} && echo "last line: " &&  tail -n 1 {} && printf "\n\n"' \;
 ```
 
 ## 11 Print contents of a file starting from the nth line
